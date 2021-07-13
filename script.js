@@ -35,11 +35,19 @@ function createItem(text){ // items içindeki itemları li'nin içine yerleştir
         //button oluştur
         const button = document.createElement('button');
         button.className = 'complete';
-        button.textContent="Tamamlandı";
+        button.textContent="Tamamlandı Yap";
         button.style.float = "right";
 
         button.addEventListener('click', function() {
             li.classList.toggle('checked');
+            if(button.textContent === "Tamamlandı Yap"){
+                button.textContent = "Tamamlanmadı Yap";
+                button.style.backgroundColor = "indianred";
+            }else{
+                button.textContent = "Tamamlandı Yap";
+                button.style.backgroundColor = "blueviolet"
+            }
+            
           });
 
         

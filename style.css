@@ -76,7 +76,7 @@ button:hover{
 .taskItem.checked {
     color: #fff;
     text-decoration: line-through;
-    background-color: rgb(72, 136, 72);
+    background-color: rgb(79, 148, 79);
   }
 
 .complete{

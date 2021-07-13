@@ -40,13 +40,13 @@ function createItem(text){ // items içindeki itemları li'nin içine yerleştir
       
 
         button.addEventListener('click', function(){
-            //li.style.cssText = "text-decoration:line-through; background-color:lightgreen";
-            if (li.style.backgroundColor == "wheat") {
+            li.style.cssText = "text-decoration:line-through; background-color:lightgreen";
+            /*if (li.style.backgroundColor == "wheat") {
                 li.style.cssText= "background-color: lightgreen; text-decoration:line-through";
             } else {
                 li.style.cssText= "background-color: wheat; text-decoration:none";
 
-            }
+            }*/
         })
 
         //a'yı li'ye ekle

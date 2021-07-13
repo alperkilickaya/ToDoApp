@@ -66,6 +66,7 @@ function addNewItem(e){
         e.preventDefault(); // forma tıklandığında submit olmasını engelledim. Sayfa yenilenmez.
     }else{
         alert('Lütfen Görev Giriniz!')
+        e.preventDefault() //alert'e tıklandığında form tekrar submit olmasın diye.
     }
 }
  

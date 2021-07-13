@@ -45,6 +45,8 @@ button:hover{
 
 .dutyText {
     margin: 20px 0 20px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .deleteAll{

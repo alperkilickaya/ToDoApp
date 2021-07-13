@@ -73,6 +73,12 @@ button:hover{
     margin-left: -40px;
 }
 
+.taskItem.checked {
+    color: #fff;
+    text-decoration: line-through;
+    background-color: rgb(72, 136, 72);
+  }
+
 .complete{
     font-size: 17px;
     padding: 3px;

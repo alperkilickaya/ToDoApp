@@ -2,7 +2,7 @@ const form = document.querySelector('form');
 const input = document.querySelector('#txtTaskName');
 const btnDeleteAll = document.querySelector('#btnDeleteAll');
 const taskList = document.querySelector('#task-list'); 
-
+var sayac = 0;
 
 //event'ları çağır
 eventListeners();
@@ -21,6 +21,7 @@ function eventListeners() {
 function createItem(text){ // items içindeki itemları li'nin içine yerleştir.
         // li oluştur
         const li = document.createElement('li');
+        sayac += 1; 
         li.className ='taskItem';
         li.textContent=text;
 
@@ -37,17 +38,11 @@ function createItem(text){ // items içindeki itemları li'nin içine yerleştir
         button.textContent="Tamamlandı";
         button.style.float = "right";
 
-      
+        button.addEventListener('click', function() {
+            li.classList.toggle('checked');
+          });
 
-        button.addEventListener('click', function(){
-            li.style.cssText = "text-decoration:line-through; background-color:lightgreen";
-            /*if (li.style.backgroundColor == "wheat") {
-                li.style.cssText= "background-color: lightgreen; text-decoration:line-through";
-            } else {
-                li.style.cssText= "background-color: wheat; text-decoration:none";
-
-            }*/
-        })
+        
 
         //a'yı li'ye ekle
         li.appendChild(a);
@@ -78,7 +73,8 @@ function addNewItem(e){
 function deleteItem(e){
     if(e.target.className === 'fas fa-trash'){
         if(confirm('Görev Silinsin mi?')){ // tüm class'ı bu isimli ise
-            e.target.parentElement.parentElement.remove(); //i'nin iki parent üstü li elemanı            
+            e.target.parentElement.parentElement.remove(); //i'nin iki parent üstü li elemanı   
+            sayac -= 1;     
         }
         
     }

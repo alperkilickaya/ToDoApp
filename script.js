@@ -2,13 +2,12 @@ const form = document.querySelector('form');
 const input = document.querySelector('#txtTaskName');
 const btnDeleteAll = document.querySelector('#btnDeleteAll');
 const taskList = document.querySelector('#task-list'); 
-var sayac = 0;
 
-//event'ları çağır
+//event'ları çağır.tüm eventları sayfa yüklendiğinde çalıştırdım.
 eventListeners();
 
 function eventListeners() {
-    //tüm eventları sayfa yüklendiğinde çalıştırdım.
+    
     //form submit event'ı
     form.addEventListener('submit', addNewItem); // form'a submit event ekledim
     //tek bir görev silme event'ı
@@ -21,7 +20,6 @@ function eventListeners() {
 function createItem(text){ // items içindeki itemları li'nin içine yerleştir.
         // li oluştur
         const li = document.createElement('li');
-        sayac += 1; 
         li.className ='taskItem';
         li.textContent=text;
 
@@ -49,8 +47,6 @@ function createItem(text){ // items içindeki itemları li'nin içine yerleştir
             }
             
           });
-
-        
 
         //a'yı li'ye ekle
         li.appendChild(a);
@@ -82,10 +78,8 @@ function addNewItem(e){
 function deleteItem(e){
     if(e.target.className === 'fas fa-trash'){
         if(confirm('Görev Silinsin mi?')){ // tüm class'ı bu isimli ise
-            e.target.parentElement.parentElement.remove(); //i'nin iki parent üstü li elemanı   
-            sayac -= 1;     
-        }
-        
+            e.target.parentElement.parentElement.remove(); //i'nin iki parent üstü li elemanı       
+        } 
     }
     e.preventDefault()
 }
